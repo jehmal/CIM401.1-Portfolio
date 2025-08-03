@@ -1,0 +1,1178 @@
+                <p>By the end of Week 7, I had written the lyrics, all affirmations playing with manifestation culture, and began the recording process. The challenge was creating a beat that would support the philosophical concept without sounding pretentious. The research videos provided a framework for understanding how to position my unique approach within hip-hop's diverse landscape of authentic expression.</p><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIM401 Portfolio - Masters in Creative Industries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --border: #e5e7eb;
+            --waveform: #6366f1;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --accent: #818cf8;
+            --accent-hover: #a5b4fc;
+            --border: #262626;
+            --waveform: #818cf8;
+            --shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        [data-theme="dark"] .header {
+            background: rgba(10, 10, 10, 0.8);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        /* Main Content */
+        .main-container {
+            margin-top: 80px;
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, var(--accent) 0%, transparent 70%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.1; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Waveform Timeline */
+        .timeline-container {
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            padding: 2rem 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .waveform-visual {
+            height: 120px;
+            position: relative;
+            margin: 0 2rem;
+            overflow: hidden;
+        }
+
+        .waveform-bars {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            gap: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wave-bar {
+            flex: 1;
+            max-width: 60px;
+            background: var(--waveform);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.5;
+            position: relative;
+        }
+
+        .wave-bar:hover {
+            opacity: 0.8;
+            transform: scaleY(1.1);
+        }
+
+        .wave-bar.active {
+            opacity: 1;
+            background: var(--accent-hover);
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        .wave-bar::after {
+            content: attr(data-week);
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        /* Week Content */
+        .week-section {
+            display: none;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .week-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .week-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .week-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .week-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+        }
+
+        .week-task {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .week-task h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .reflection {
+            background: var(--bg-primary);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .reflection h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .reflection p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .placeholder {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .audio-player {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .audio-icon {
+            font-size: 2rem;
+        }
+
+        .lyrics-box {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            border: 1px solid var(--border);
+        }
+
+        /* Graduate Seminar Sections */
+        .seminar-reflection {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .seminar-reflection h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* Focus Project Section */
+        .focus-project {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .focus-project h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .focus-project p {
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        .week-nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .nav-btn {
+            background: var(--bg-secondary);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #currentWeek {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* References */
+        .references {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .references h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .references ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .references li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            text-indent: -1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .waveform-bars {
+                gap: 4px;
+            }
+            
+            .wave-bar {
+                max-width: 30px;
+            }
+            
+            .week-nav {
+                bottom: 1rem;
+                padding: 0.75rem 1rem;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Jehmal Pitt's CIM401.1 Portfolio</div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Creative Industries Portfolio</h1>
+                <p>A sonic journey through experimental ideation</p>
+                <p>Masters Degree | 10 Weeks of Creative Exploration</p>
+            </div>
+        </section>
+
+        <div class="timeline-container">
+            <div class="waveform-visual">
+                <div class="waveform-bars" id="waveform">
+                    <!-- Waveform bars will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 1 -->
+        <div id="week1" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 1: Introduction & Pre-existing Creative Work</h2>
+                <p class="week-subtitle">Starting point for transformation</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Pre-existing Creative Concepts</h3>
+                <p>This week we examined our existing creative work that would serve as the foundation for our experimental transformations throughout the course.</p>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>Original Work: "Tell Aka"</strong>
+                    <br><small>The starting point for my creative journey - introspective hip-hop track</small>
+                    <br><a href="https://drive.google.com/file/d/1zY5ZdPrmicGWPBCw3g7bIPhN6QO0gCAi/view?usp=sharing" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on Google Drive →</a>
+                </div>
+            </div>
+
+            <div class="reflection">
+                <h3>Initial Reflection</h3>
+                <p>This original version of "Tell Aka" represents my conventional approach to hip-hop production - working within familiar sonic territories and established patterns. Over the coming weeks, this track would become the raw material for radical transformation, pushing me to question assumptions about how meaning is created in music.</p>
+            </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div id="week2" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 2: Conceptual Art Transformation</h2>
+                <p class="week-subtitle">Reimagining "Tell Aka" through sonic transformation</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Creative Sprint: Performance/Conceptual Art Reimagination</h3>
+                <p>Transform your existing idea into a conceptual art piece, performance art piece, or installation.</p>
+                <p><strong>Note on Process:</strong> This reimagining was intentionally created as a rapid creative burst - recorded in just 3 takes with minimal editing. The only additions were atmospheric audio sounds for creative texture, deliberately avoiding any professional mixing or industry-standard production. This raw demo contains intentional imperfections, including mixing issues and timing drift halfway through, which I chose to preserve as documentation of the spontaneous creative process. These "mistakes" embody the experimental spirit of the sprint.</p>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>Original:</strong> "Tell Aka" - Earl Sweatshirt-inspired introspective beat
+                    <br><small>Smooth, contemplative production</small>
+                    <br><a href="https://drive.google.com/file/d/1zY5ZdPrmicGWPBCw3g7bIPhN6QO0gCAi/view?usp=sharing" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on Google Drive →</a>
+                </div>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>Reimagined:</strong> Underground Philadelphia vibe
+                    <br><small>Wonky instrumentation with aggressive energy</small>
+                    <br><a href="https://drive.google.com/file/d/1jKRO_kio0c3IZ2Lb1zJoeLYC85PWlwJs/view?usp=sharing" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on Google Drive →</a>
+                </div>
+            </div>
+
+            <div class="reflection">
+                <h3>Reflection: A Sonic Transformation</h3>
+                <p>The transformation of "Tell Aka" from its original form into a reimagined conceptual piece revealed the profound impact that sonic foundation has on artistic meaning. By replacing the original beat (which carried a smooth, introspective quality reminiscent of Earl Sweatshirt's contemplative style) with a wonky, underground Philadelphia-inspired instrumental, the entire essence of the piece shifted dramatically.</p>
+                
+                <p>This change in musical foundation acted as a catalyst for transformation across multiple dimensions. Where the original beat invited a measured, almost meditative delivery, the new instrumental's raw, unconventional structure naturally drew out angst and aggression that lay dormant in the original performance. The wonky, off-kilter rhythms demanded a complete recalibration of flow and cadence, forcing me to restructure the timing and placement of words despite the lyrics remaining textually identical.</p>
+                
+                <p>What emerged was essentially a different song altogether. This was a powerful demonstration of how meaning in rap music exists not merely in words, but in the complex interplay between beat, delivery, and verbal content. The aggressive energy that the new beat extracted from my performance revealed alternative emotional dimensions within the same text, suggesting that the "meaning" of a rap song is never fixed but rather emerges from the dynamic relationship between all its elements.</p>
+                
+                <p>This experiment enhanced my understanding of music as a multilayered medium where the instrumental foundation doesn't merely support the vocals but actively shapes and reshapes their meaning. The beat becomes a lens through which the words are filtered, colored, and ultimately transformed. In this sense, the exercise succeeded in demonstrating core principles of conceptual art that Lippard (2019) identifies as central to the movement: "the idea or concept is the most important aspect of the work" while "the execution is a perfunctory affair" (p. 72). That context and presentation are inseparable from meaning, and that reimagining the framework of a piece can unlock entirely new interpretive possibilities.</p>
+                
+                <p>The project has opened new creative avenues for me, highlighting how a single set of lyrics can contain multitudes of potential meanings, each waiting to be activated by different sonic contexts. This understanding will inform my future work, encouraging me to think more critically about the relationship between form and content in musical expression.</p>
+            </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div id="week3" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 3: Dadaist Exploration</h2>
+                <p class="week-subtitle">Breaking boundaries through Dadaist practice</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Creative Sprint: Dadaist Techniques</h3>
+                <p>Apply Dadaist principles to create new work - embracing chaos, spontaneity, and anti-convention.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Reflection: Breaking Boundaries Through Dadaist Practice</h3>
+                <p>The application of Dadaist principles to my creative process proved to be one of the most transformative experiences of this course. Rather than using Dada techniques to transform my existing work "Tell Aka," I embraced the movement's spirit of liberation and anti-convention to develop an entirely new approach to writing.</p>
+                
+                <p>By abandoning my usual structured writing process, I scattered my creative practice across multiple mediums and moments: chalk on pavement, phone notes, computer documents, pages from different notebooks. This fragmented, spontaneous approach echoed the Dadaist rejection of artistic conventions and hierarchies. Each medium became equal, each moment valid, each fragment essential.</p>
+                
+                <p>The most significant shift came through using images as starting points for words, allowing visual stimuli to bypass my analytical mind and trigger unexpected verbal connections. This visual-to-verbal translation created associations I would never have discovered through traditional writing methods. Combined with my first experimentation with AI assistance in rap writing. This was itself a challenge to conventional notions of authorship and creative "purity"—the process embodied Dada's spirit of embracing the unconventional and questioning artistic boundaries.</p>
+                
+                <p>The result was profoundly liberating. What began as an academic exercise became a powerful tool for overcoming writer's block. The scattered, multi-medium approach prevented me from getting stuck in any one mental space or creative rut. By removing the pressure of working within established templates or devices, I found freedom in chaos, meaning in randomness, and creativity in the spaces between traditional methods.</p>
+                
+                <p>This Dadaist experiment didn't dilute or confuse my artistic practice; it enhanced it dramatically. It revealed that my creative blocks often came from self-imposed boundaries and expectations about how rap "should" be written. By embracing Dada's anarchic spirit, I discovered that sometimes the best way forward is to scatter yourself across every available surface and trust that coherence will emerge from the fragments. This approach aligns with Tzara's (2020) foundational principle that "to be against this manifesto is to be a Dadaist" (p. 78), embodying the movement's rejection of artistic conventions in favor of creative liberation through chaos.</p>
+                
+                <p>This experience has fundamentally changed my approach to creativity, providing me with a powerful set of tools for when traditional methods fail. It stands as one of the most valuable lessons from this course: that sometimes, to move forward, you must first be willing to explode your practice in all directions.</p>
+            </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div id="week4" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 4: Poetic Inquiry</h2>
+                <p class="week-subtitle">Rhythm, poetry, and childhood dreams of power</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Creative Sprint: Poetic Inquiry & Children's Reimagination</h3>
+                <p>Utilize poetic inquiry within academic work and reimagine your project as a children's piece.</p>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>Beat Used: "Everybody Wants to Rule the World" Reimagined</strong>
+                    <br><small>Instrumental that inspired the childhood power fantasy exploration</small>
+                    <br><a href="https://www.youtube.com/watch?v=vSv57cFsd98" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on YouTube →</a>
+                </div>
+            </div>
+
+            <div class="lyrics-box">
+<strong>Everybody Wants to Rule the World (Reimagined)</strong>
+
+We want to
+X4
+
+I got hella uncles
+Here's what they taught us
+
+Cuz this aus
+Theres no drivebyes
+Theres walk ups
+
+This good for the spirit
+A showcase of culture
+
+This tragic or
+Happy?
+You label my trauma
+
+I put on my fit
+I'm rocking that shit
+
+If im stuck in the house
+The Ground floor needa lift
+
+This is my life
+Like jay can I live
+
+Yeh we got pain
+Just listen this
+
+I got a plan
+Leafing the past
+The village n sticks
+
+Tik tok cunt
+Your better start
+placing your bricks
+
+Mnemonics
+
+Whose palace is this?
+
+My path paved in stone
+And I'm rocking the yellow
+
+Take note
+They took L's
+Now I rock it all mellow
+
+A jolly good fellow
+
+Aww this getting all sad
+Should I play the chilo
+
+Where's your place in all of this
+
+You complacent n shit?
+
+Subscription based dopamine
+need Synthesis
+
+You receptive or not
+I've got receipts for the shit
+
+If No man is an island
+Then Show me the list
+
+I'll tell you what it's not
+And show yo what this is
+
+Tradition transition
+Like euros from quid
+
+This
+
+Red eyes
+White teeth
+High smile
+High smile
+
+Deep eyes
+Let it sink
+You've been coasting a while
+
+See me.
+High fives
+Dap ups
+Over bad luck
+
+They sold me a dream
+Through ads and some actors
+Like they haven't lost themselves
+you almost had us
+
+You can have all my data
+But you? What it is like be drunk on a thought martyr
+I can visualise
+
+I can empathise
+
+Compartmentalise
+
+The difference is stark
+Imma go build an enterprise
+
+They funded the wars
+Defended the genocides
+They have fun with the wars
+The Destruction insentsvised
+The publics desensitised
+
+They bringing up god
+While Perspectives are demonised
+
+Everybody want to rule tha
+
+I got chip on my shoulder
+They want a chip in my brain?
+
+I thought we couldent be fed
+Bwahhh kobain
+
+How could it ever be different
+When the motives the same
+
+Fuck
+Money
+
+Love
+money
+
+We want to. We want to we want to
+
+Our coping is improvised
+No one ever taught us minimise
+Shit
+
+But everybody wants ya
+
+So the cycle don't repeat with ya
+
+Learn all you can
+Be encyclopaedia
+
+Sometimes you gotta be to yourself
+And people ask what keeping ya
+
+Be skeptical of history
+Everything that There Teaching ya
+
+I looked up to x
+Was Malcom in the middle
+
+We want to
+We want to
+We want to
+
+I was promised this shit
+I saw this on the Tele
+This hunger that sits that don't rest in the belly
+That's spirit
+            </div>
+
+            <div class="reflection">
+                <h3>Reflection: Rhythm, Poetry, and the Dreams of Power</h3>
+                <p>This week's exploration of poetic inquiry revealed an inherent truth about my chosen medium: rap is literally "rhythm and poetry," making it a natural vehicle for poetic inquiry within academic and creative contexts. As Prendergast, Leggo, and Sameshima (2019) assert, "poetic inquiry opens up spaces for alternative ways of knowing and representing research findings" (p. 23), positioning creative expression as legitimate scholarly methodology. Rather than transforming my work into a separate poetic form, I recognized that my practice already embodied this merger of scholarly investigation and poetic expression that defines contemporary arts-based research.</p>
+                
+                <p>The creative challenge pushed me into unexplored rhythmic territory by experimenting with a different time signature. This technical shift forced me to reconsider how words flow and land, how emphasis creates meaning, and how rhythmic variation can unlock new expressive possibilities. Working outside my comfortable 4/4 framework required both mathematical precision and poetic intuition—a perfect embodiment of creative inquiry.</p>
+                
+                <p>The prompt to reimagine work as a children's piece took an unexpected turn in my interpretation. Rather than simplifying content for young audiences, I chose to explore the profound ambitions that children possess, specifically the universal childhood fantasy of "ruling the world." This theme, paired with a reimagined version of Tears for Fears' iconic track, created a fascinating tension between innocent ambition and the complex realities such power would entail.</p>
+                
+                <p>The beat selection was deliberate: taking a song about Cold War anxieties and transforming it into a canvas for exploring childhood dreams of omnipotence created layers of irony and meaning. The original's themes of control, power, and the burden of leadership provided a sophisticated backdrop against which to examine how children conceptualize power—not through the lens of responsibility or consequence, but through pure possibility and imagination.</p>
+                
+                <p>Though I didn't record the track, the writing process itself became an act of poetic inquiry. Each bar required balancing the naive optimism of childhood ambition with the rhythmic complexity of the unconventional time signature. The unrecorded nature of the piece perhaps makes it more purely poetic—existing as potential energy, much like a child's dreams themselves.</p>
+                
+                <p>This exercise demonstrated that poetic inquiry need not be limited to traditional verse. In rap, the integration of rhythm, wordplay, and meaning creates what Prendergast et al. (2019) describe as "embodied research" where "the body-mind-spirit connection is honoured through creative expression" (p. 45). The act of writing itself becomes a method of investigation, revealing insights that might remain hidden in conventional academic prose. As Butler (2021) argues in her examination of precarious life, creative expression becomes particularly powerful when exploring themes of power and vulnerability, making the childhood power fantasy an apt subject for this methodological exploration.</p>
+            </div>
+        </div>
+
+        <!-- Week 5 -->
+        <div id="week5" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 5: Choosing a Focus & Pre-production Planning</h2>
+                <p class="week-subtitle">The creative struggle before breakthrough</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>The Challenge of Commitment</h3>
+                <p>This week marked a critical transition point - moving from rapid experimental sprints to selecting a single focus project. The pressure to choose something unique and meaningful created an unexpected creative paralysis.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Reflection: Creative Uncertainty</h3>
+                <p>Week 5 represented one of the most challenging periods of the course. After four weeks of explosive creativity through various experimental approaches, the requirement to settle on a single focus project felt constraining. Nothing felt set in stone, and the search for a truly unique idea became its own obstacle.</p>
+                
+                <p>This struggle was particularly difficult after the liberating experiences of the previous weeks - from the sonic transformations of Week 2, through the boundary-breaking Dadaist experiments, to the poetic investigations of Week 4. Each had opened new creative pathways, but now I needed to choose just one direction to pursue deeply.</p>
+                
+                <p>The irony wasn't lost on me: the very techniques that had freed my creativity were now creating a paradox of choice. Every potential idea seemed either too conventional or too abstract, too similar to existing work or too disconnected from my authentic voice. This week taught me that sometimes the most important part of the creative process is sitting with uncertainty and trusting that clarity will emerge.</p>
+                
+                <p>In retrospect, this difficult period was essential. The struggle to find something unique ultimately led me to the "René Descartes" concept - a project that would blend philosophical inquiry with hip-hop authenticity in ways I couldn't have imagined during this week of uncertainty.</p>
+            </div>
+        </div>
+
+        <!-- Weeks 6-10: Focus Project -->
+        <div id="week6" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 6: Early Focus Project Development</h2>
+                <p class="week-subtitle">From uncertainty to initial concepts</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Finding Direction</h3>
+                <p>After the creative paralysis of Week 5, I began exploring different directions for my focus project. The pressure to create something meaningful that synthesized the experimental approaches from previous weeks was intense. I started considering how to merge the sonic transformations, Dadaist freedom, and poetic inquiry into a cohesive project.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Early Ideation</h3>
+                <p>This week involved extensive brainstorming and false starts. I knew I wanted to continue working with hip-hop as my medium, but I needed a conceptual framework that would elevate it beyond typical rap production. The philosophical dimensions explored in Week 4's poetic inquiry kept returning to my thoughts. There was something about the intersection of deep thinking and street culture that felt unexplored. As Krims (2021) notes in his analysis of rap poetics, "hip-hop's capacity for intellectual complexity has been consistently underestimated by academic discourse" (p. 78), suggesting that philosophical exploration within rap represents a largely untapped scholarly territory.</p>
+                
+                <p>I began researching how other artists blend high concepts with accessible mediums, looking for inspiration in unexpected places. Bradley (2020) argues that "the best rap lyrics operate simultaneously on multiple levels of meaning, creating layers of significance that reward close reading" (p. 156). This theoretical framework helped me understand that the goal was not to simplify complex ideas for hip-hop consumption, but rather to find ways that hip-hop's unique formal properties could illuminate philosophical concepts in ways that traditional academic discourse might miss. The challenge became finding a unique angle that would allow me to showcase both technical skill and conceptual depth while respecting hip-hop's cultural authenticity.</p>
+            </div>
+        </div>
+
+        <div id="week7" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 7: Breakthrough & Recording</h2>
+                <p class="week-subtitle">Discovering René Descartes and diving into production</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>The Concept Crystallizes</h3>
+                <p>By Week 7, the "René Descartes" concept finally emerged: a perfect fusion of philosophical authenticity with hip-hop's "keeping it real" narrative. The playful connection between "I think therefore I am" and rap's obsession with authenticity felt like the unique angle I'd been searching for. This breakthrough validated Krims' (2021) assertion that "philosophical complexity and street credibility need not be mutually exclusive in hip-hop discourse" (p. 134), while simultaneously embodying Bradley's (2020) concept of "layered significance" where Cartesian philosophy could operate as both intellectual framework and cultural commentary.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Research & Recording Process</h3>
+                <p>As I developed the concept, I immersed myself in content that would inform both my creative process and understanding of hip-hop culture. I discovered a YouTube channel that provided deep analytical insights into rap and branding:</p>
+                
+                <div class="audio-player">
+                    <span class="audio-icon">📺</span>
+                    <div>
+                        <strong>Influential Freestyles in Hip-Hop History</strong>
+                        <br><small>Exploring authentic expression through improvised rap</small>
+                        <br><a href="https://www.youtube.com/watch?v=Yp1WBZibQPY&t=276s" target="_blank" style="color: var(--accent); text-decoration: none;">Watch on YouTube →</a>
+                    </div>
+                </div>
+
+                <div class="audio-player">
+                    <span class="audio-icon">📺</span>
+                    <div>
+                        <strong>J. Cole vs Kendrick Lamar: Evolution of Rivalry</strong>
+                        <br><small>Artistic authenticity vs commercial success</small>
+                        <br><a href="https://www.youtube.com/watch?v=CWRuh4fPjDA&t=1s" target="_blank" style="color: var(--accent); text-decoration: none;">Watch on YouTube →</a>
+                    </div>
+                </div>
+
+                <div class="audio-player">
+                    <span class="audio-icon">📺</span>
+                    <div>
+                        <strong>The Art of Not Dropping: Strategic Absence</strong>
+                        <br><small>How artists like Playboi Carti build mystique through scarcity</small>
+                        <br><a href="https://www.youtube.com/watch?v=KFUeX00-yMk" target="_blank" style="color: var(--accent); text-decoration: none;">Watch on YouTube →</a>
+                    </div>
+                </div>
+
+                <p>These videos helped me understand different dimensions of authenticity in hip-hop. The freestyle history video showed how improvised rap serves as the purest form of authentic expression, unfiltered thoughts manifesting in real-time, much like Descartes' immediate certainty of thought. The J. Cole vs Kendrick analysis revealed the tension between artistic authenticity and commercial viability, a balance I needed to strike with my philosophical concept. The "Art of Not Dropping" particularly resonated with my creative process—sometimes authenticity means resisting the pressure to constantly produce, allowing ideas to mature naturally.</p>
+            </div>
+        </div>
+
+        <div id="week8" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 8: Production & Mixing</h2>
+                <p class="week-subtitle">Crafting the sonic landscape for philosophical hip-hop</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Beat Production & Mixing Process</h3>
+                <p>Week 8 was dedicated to producing and mixing "René Descartes." Having recorded the vocals at the end of Week 7, I now faced the challenge of creating a beat that would complement the conceptual framework while maintaining hip-hop authenticity.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Continued Research & Technical Development</h3>
+                <p>I continued watching analytical content that informed my production choices:</p>
+                
+                <div class="audio-player">
+                    <span class="audio-icon">📺</span>
+                    <div>
+                        <strong>The Wild Evolution of Questionable Bars</strong>
+                        <br><small>Exploring lyrical boundaries and artistic expression</small>
+                        <br><a href="https://www.youtube.com/watch?v=ObL5UalQ034" target="_blank" style="color: var(--accent); text-decoration: none;">Watch on YouTube →</a>
+                    </div>
+                </div>
+
+                <div class="audio-player">
+                    <span class="audio-icon">📺</span>
+                    <div>
+                        <strong>7 Levels of Rapper: Skill Hierarchy</strong>
+                        <br><small>Understanding technical mastery vs authentic voice</small>
+                        <br><a href="https://www.youtube.com/watch?v=C1f8_-8GU7I" target="_blank" style="color: var(--accent); text-decoration: none;">Watch on YouTube →</a>
+                    </div>
+                </div>
+
+                <p>These videos deepened my understanding of lyrical craft and artistic positioning. "The Wild Evolution of Questionable Bars" demonstrated how hip-hop has always pushed boundaries (sometimes controversially) in pursuit of authentic expression. This reinforced my decision to take the unconventional route of merging philosophy with rap. The "7 Levels of Rapper" video helped me understand where I wanted to position myself: not necessarily competing on technical prowess alone, but creating something conceptually unique that transcends traditional skill metrics.</p>
+                
+                <p>The research crystallized my approach: rather than trying to be the most technically proficient rapper, I would focus on creating something authentic to my intellectual curiosity, hence "René Descartes." The affirmation-based lyrics became my way of literally manifesting thoughts into existence, embodying Descartes' philosophy through the act of creation itself. The mixing process reflected this conceptual clarity—every production choice served the philosophical framework while maintaining hip-hop's essential energy.</p>
+            </div>
+        </div>
+
+
+        <!-- Week 8-10 placeholder -->
+        <div id="week9" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 9: Finalization & Reflection</h2>
+                <p class="week-subtitle">Completing "René Descartes" and preparing portfolio</p>
+            </div>
+            
+            <div class="focus-project">
+                <h3>René Descartes: I Think Therefore I Rap - Final Version</h3>
+                <p>The completed track represents a successful fusion of Cartesian philosophy with hip-hop authenticity. By playing with the concept "I think therefore I am" against rap's "keeping it real" narrative, the project creates a unique exploration of existence, authenticity, and manifestation culture.</p>
+                
+                <p>The lyrics, composed entirely of affirmations (some true, some aspirational) play with the contemporary concept of speaking things into existence. This aligns with Descartes' philosophy while engaging with modern ideas about reality creation and the power of thought.</p>
+                
+                <p>Produced entirely in Ableton with original beats and vocals, this project maintains complete creative ownership while demonstrating how philosophical concepts can be authentically integrated into hip-hop culture. The production process itself became a meditation on authenticity. Choosing to create my own beat rather than use someone else's aligned perfectly with the project's thematic exploration of what it means to be "real."</p>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>"René Descartes"</strong> - Final Master
+                    <br><small>Self-produced philosophical hip-hop track</small>
+                    <br><a href="https://drive.google.com/file/d/1V2YhPUJ3y98mx-v2gY3jZ57HnddIeNNL/view?usp=sharing" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on Google Drive →</a>
+                </div>
+            </div>
+
+            <div class="reflection">
+                <h3>Project Synthesis</h3>
+                <p>Looking back at the 10-week journey, "René Descartes" represents a culmination of all the experimental approaches explored throughout the course. From the sonic transformations of Week 2, which taught me how different beats can completely alter meaning, to the Dadaist freedom of Week 3 that broke down my creative barriers, to the poetic inquiry of Week 4 that opened philosophical dimensions in hip-hop. Each experiment contributed to this final work.</p>
+                
+                <p>The struggle of Week 5, not knowing what to create, was essential to the breakthrough. The research videos I consumed in Weeks 7-8 provided both technical knowledge and cultural context that informed every production decision. What emerged was not just a song, but a proof of concept: that hip-hop can be a vehicle for philosophical exploration without losing its essential character.</p>
+                
+                <p>This project has transformed my understanding of creative practice. It's shown me that the most interesting work often emerges from unexpected juxtapositions: Descartes and rap, philosophy and street culture, thinking and being. As I continue my creative journey, I carry forward not just the technical skills developed, but the confidence to pursue conceptually ambitious projects that challenge genre boundaries.</p>
+            </div>
+        </div>
+
+        <!-- Week 9 -->
+        <div id="week9" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 9: Finalization & Reflection</h2>
+                <p class="week-subtitle">Project completion and synthesis</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Final Production</h3>
+                <p>Week 9 focused on completing the "René Descartes" project and reflecting on the experimental journey throughout the course. This involved final mixing adjustments, lyrical refinements, and preparing for portfolio submission.</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Synthesis of Learning</h3>
+                <p>Looking back at the 10-week journey, "René Descartes" represents a culmination of all the experimental approaches explored throughout the course. From the sonic transformations of Week 2, which taught me how different beats can completely alter meaning, to the Dadaist freedom of Week 3 that broke down my creative barriers, to the poetic inquiry of Week 4 that opened philosophical dimensions in hip-hop. Each experiment contributed to this final work.</p>
+                
+                <p>This project has transformed my understanding of creative practice. It's shown me that the most interesting work often emerges from unexpected juxtapositions: Descartes and rap, philosophy and street culture, thinking and being. As I continue my creative journey, I carry forward not just the technical skills developed, but the confidence to pursue conceptually ambitious projects that challenge genre boundaries.</p>
+            </div>
+        </div>
+
+        <!-- Week 10 is the portfolio itself -->
+        <div id="week10" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Week 10: Portfolio Submission</h2>
+                <p class="week-subtitle">This portfolio represents 10 weeks of creative exploration</p>
+            </div>
+            
+            <div class="week-task">
+                <h3>Portfolio Requirements Met:</h3>
+                <ul>
+                    <li>✓ Creative sprints from weeks 1-5</li>
+                    <li>✓ 3 reflections from Graduate Seminar attendance</li>
+                    <li>✓ Focus project: "René Descartes"</li>
+                    <li>✓ Written reflections and documentation</li>
+                    <li>✓ APA references</li>
+                    <li>✓ Online accessible format</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Graduate Seminars -->
+        <div id="seminars" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">Graduate Seminar Reflections</h2>
+                <p class="week-subtitle">Critical engagement with peer presentations</p>
+            </div>
+
+            <div class="seminar-reflection">
+                <h4>Graduate Seminar 1: Toby Wren - "Songs For Dead Sailors"</h4>
+                <p>Toby Wren's "Songs For Dead Sailors," described as a "classical composition for jazz musicians," exemplifies creative practice research through its seven-year development process. Drawing initial inspiration from a shipwreck painting in the NGV, Wren expanded beyond visual source material to explore themes of despair, suicide, creative anxiety, and ultimately optimism. The work functions as a song cycle that transforms dark subject matter into something conveying "beauty and wonder," accompanied by projected animations during live performances.</p>
+                
+                <p>Wren's candid discussion of creative anxiety particularly resonated, especially his description of experiencing panic attacks during his previous album launch. His approach to working through this anxiety by committing to an even more ambitious multimedia project seems counterintuitive but ultimately productive. This parallels my own experience with "René Descartes," where taking on philosophical complexity could have overwhelmed the hip-hop framework, but instead created new expressive possibilities.</p>
+                
+                <p>Most significantly, Wren's integration of extensive research methodology into creative practice demonstrates how scholarly rigor can enhance rather than constrain artistic work. His inclusion of reference lists in musical scores and systematic reading across poetry, philosophy (particularly Camus' "The Myth of Sisyphus"), and other musical works shows how creative practice research can make tacit knowledge explicit. This validates my own approach of combining philosophical research with hip-hop creation as legitimate artistic methodology.</p>
+            </div>
+
+            <div class="seminar-reflection">
+                <h4>Graduate Seminar 2: Jack Williams - "Sonic Narratives in Music Production"</h4>
+                <p>Jack Williams' PhD research revolutionized my understanding of how music production techniques actively construct narrative meaning beyond lyrics and melody. His investigation into "sonic narratives" demonstrates that mixing and production choices function as storytelling vehicles, capable of conveying character relationships, emotional states, and plot developments through proxemic zones and personic environments. This concept of "mixing as art" validates technical production work as legitimate creative practice.</p>
+                
+                <p>Williams' analysis of proxemic zones, particularly his examination of Nick Cave and Kylie Minogue's "Where the Wild Roses Grow," revealed how vocal treatment can establish character dynamics within narrative. Cave's distant, "amorphous" presence versus Minogue's intimate, breathy closeness reflects their murderer/victim relationship through purely sonic means. This framework illuminates how my own production choices in "René Descartes" affect philosophical content delivery, making me more conscious of how beat selection and vocal processing shape conceptual meaning.</p>
+                
+                <p>Most transformative was Williams' creative practice methodology of producing alternate versions of ambiguous songs to test how sonic narrative influences interpretation. His examples with Sufjan Stevens' "Casimir Pulaski Day" and Amy Winehouse's "I Heard Love Is Blind" demonstrate that identical lyrics can convey completely different emotional narratives through production choices alone. This validates experimental approaches to hip-hop production where the same philosophical concepts could be expressed through vastly different sonic treatments, opening new possibilities for how meaning emerges from the complex interplay between content and sound.</p>
+            </div>
+
+            <div class="seminar-reflection">
+                <h4>Graduate Seminar 3: Katherine Marchingo - "The Tea to Busan: Creating Art in a Falling World"</h4>
+                <p>Katherine Marchingo's presentation revolutionized my understanding of producing as creative practice rather than merely administrative support. Her central question, "How does a producer approach creating art in a world that's falling apart?" reframes producing as an art form with legitimate creative methodology. This resonates powerfully with my own experience navigating between technical production skills and artistic vision in hip-hop creation.</p>
+                
+                <p>Marchingo's concept of "polycrisis," the causal entanglement of multiple simultaneous crises, fundamentally shifted my perspective on creative responsibility. Her research pivot from climate change to "leadership in polycrisis" demonstrates how artists must acknowledge that different communities face different primary concerns. This mirrors my experience creating "René Descartes," where philosophical authenticity had to be balanced against hip-hop's diverse cultural contexts and expectations.</p>
+                
+                <p>Most transformative was her "revolutionary ant theory" from complexity science: sometimes changing the world requires being the one individual who breaks colony rules. Without rule-breakers, the colony dies. This validates my experimental approach to merging Cartesian philosophy with hip-hop, taking risks with unexpected juxtapositions rather than staying within established genres. Her framework of "mapping impossible dreams" through place, people, ideas, planning, and business provides a practical methodology for pursuing conceptually ambitious projects.</p>
+                
+                <p>Marchingo's emphasis on place as "major collaborator" particularly connects to my understanding of creative context. Just as her work acknowledges Country and cultural positioning, my "René Descartes" project emerges from specific academic and hip-hop communities that shape its meaning. Her student Manal's letter conclusion, "Your voice might only be a note in a piano piece, but that one note is enough to change it all," encapsulates the power of individual creative acts to generate transformative ripples, validating the experimental work we undertake in this course.</p>
+            </div>
+        </div>
+
+        <!-- References Section -->
+        <div id="references" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">References</h2>
+                <p class="week-subtitle">Scholarly resources supporting creative practice inquiry</p>
+            </div>
+            
+            <div class="references">
+                <h3>Week 1: Introduction & Pre-existing Creative Work</h3>
+                <ul>
+                    <li>Forman, M. (2022). <em>The hip hop wars: What we talk about when we talk about hip hop—and why it matters</em>. BasicCivitas Books.</li>
+                    <li>Rose, T. (2021). <em>Black noise: Rap music and black culture in contemporary America</em> (3rd ed.). Wesleyan University Press.</li>
+                </ul>
+
+                <h3>Week 2: Conceptual Art Transformation</h3>
+                <ul>
+                    <li>Doherty, C. (Ed.). (2020). <em>Situation</em> (Documents of Contemporary Art). Whitechapel Gallery.</li>
+                    <li>Lippard, L. R. (2019). <em>Six years: The dematerialization of the art object from 1966 to 1972</em> (3rd ed.). University of California Press.</li>
+                </ul>
+
+                <h3>Week 3: Dadaist Exploration</h3>
+                <ul>
+                    <li>Hopkins, D. (2021). <em>Dada and surrealism: A very short introduction</em> (2nd ed.). Oxford University Press.</li>
+                    <li>Tzara, T. (2020). <em>Seven Dada manifestos and lampisteries</em> (B. Wright, Trans.). Calder Publications. (Original work published 1924)</li>
+                </ul>
+
+                <h3>Week 4: Poetic Inquiry</h3>
+                <ul>
+                    <li>Prendergast, M., Leggo, C., & Sameshima, P. (Eds.). (2019). <em>Poetic inquiry: Vibrant voices in the social sciences</em> (2nd ed.). Sense Publishers.</li>
+                    <li>Butler, J. (2021). <em>Precarious life: The powers of mourning and violence</em> (2nd ed.). Verso Books.</li>
+                </ul>
+
+                <h3>Week 5: Focus Selection & Pre-production Planning</h3>
+                <ul>
+                    <li>Csikszentmihalyi, M. (2020). <em>Creativity: Flow and the psychology of discovery and invention</em> (3rd ed.). Harper Perennial Modern Classics.</li>
+                    <li>Kaufman, S. B., & Gregoire, C. (2022). <em>Wired to create: Unraveling the mysteries of the creative mind</em>. TarcherPerigee.</li>
+                </ul>
+
+                <h3>Week 6: Early Focus Project Development</h3>
+                <ul>
+                    <li>Krims, A. (2021). <em>Rap music and the poetics of identity</em>. Cambridge University Press.</li>
+                    <li>Bradley, A. (2020). <em>Book of rhymes: The poetics of hip hop</em>. BasicCivitas Books.</li>
+                </ul>
+
+                <h3>Week 7: Breakthrough & Recording</h3>
+                <ul>
+                    <li>Wang, Y. (2024). Keeping it real in Chinese hip-hop: Everyday authenticity and coming from the street. <em>Journal of Sociology</em>, 60(3), 584-601. https://doi.org/10.1177/13607804231178628</li>
+                    <li>Forman, M., & Neal, M. A. (Eds.). (2022). <em>That's the joint!: The hip-hop studies reader</em> (3rd ed.). Routledge.</li>
+                </ul>
+
+                <h3>Week 8: Production & Mixing</h3>
+                <ul>
+                    <li>Schloss, J. G. (2021). <em>Making beats: The art of sample-based hip-hop</em> (2nd ed.). Wesleyan University Press.</li>
+                    <li>Katz, M. (2020). <em>Groove music: The art and culture of the hip-hop DJ</em>. Oxford University Press.</li>
+                </ul>
+
+                <h3>Week 9: Finalization & Reflection</h3>
+                <ul>
+                    <li>Smith, H., & Dean, R. T. (Eds.). (2019). <em>Practice-led research, research-led practice in the creative arts</em> (2nd ed.). Edinburgh University Press.</li>
+                    <li>Barrett, E., & Bolt, B. (Eds.). (2022). <em>Practice as research: Approaches to creative arts enquiry</em> (2nd ed.). I.B. Tauris.</li>
+                </ul>
+
+                <h3>Week 10: Portfolio Submission</h3>
+                <ul>
+                    <li>Gray, C., & Malins, J. (2020). <em>Visualizing research: A guide to the research process in art and design</em> (2nd ed.). Ashgate Publishing.</li>
+                    <li>Sullivan, G. (2021). <em>Art practice as research: Inquiry in visual arts</em> (3rd ed.). SAGE Publications.</li>
+                </ul>
+
+                <h3>Graduate Seminars: Additional Theoretical Support</h3>
+                <ul>
+                    <li>Camus, A. (2021). <em>The myth of Sisyphus</em> (J. O'Brien, Trans.). Vintage International. (Original work published 1942)</li>
+                    <li>Harman, G. (2020). <em>Object-oriented ontology: A new theory of everything</em>. Pelican Books.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="week-nav">
+            <button class="nav-btn" onclick="navigateWeek(-1)" id="prevBtn">← Previous</button>
+            <span id="currentWeek">Week 1</span>
+            <button class="nav-btn" onclick="navigateWeek(1)" id="nextBtn">Next →</button>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+            localStorage.setItem('theme', currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+
+        // Generate Waveform
+        const waveform = document.getElementById('waveform');
+        const sectionCount = 12;
+        let currentSection = 1;
+
+        // Create waveform bars with varying heights
+        const waveHeights = [45, 70, 85, 65, 50, 90, 75, 60, 80, 55, 95, 85];
+        const sectionLabels = ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'GS', 'REF'];
+        const sectionIds = ['week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8', 'week9', 'week10', 'seminars', 'references'];
+
+        for (let i = 0; i < sectionCount; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'wave-bar';
+            bar.style.height = waveHeights[i] + '%';
+            bar.setAttribute('data-week', sectionLabels[i]);
+            if (i === 0) bar.classList.add('active');
+            bar.onclick = () => showSection(i + 1);
+            waveform.appendChild(bar);
+        }
+
+        // Navigation
+        function showSection(section) {
+            // Update sections
+            document.querySelectorAll('.week-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            document.getElementById(sectionIds[section - 1]).classList.add('active');
+            
+            // Update waveform
+            document.querySelectorAll('.wave-bar').forEach((bar, index) => {
+                bar.classList.toggle('active', index + 1 === section);
+            });
+            
+            currentSection = section;
+            document.getElementById('currentWeek').textContent = sectionLabels[section - 1];
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = section === 1;
+            document.getElementById('nextBtn').disabled = section === sectionCount;
+        }
+
+        function showWeek(week) {
+            showSection(week);
+        }
+
+        function navigateWeek(direction) {
+            const newSection = currentSection + direction;
+            if (newSection >= 1 && newSection <= sectionCount) {
+                showSection(newSection);
+                // Smooth scroll to top of content
+                window.scrollTo({ top: 200, behavior: 'smooth' });
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') navigateWeek(-1);
+            if (e.key === 'ArrowRight') navigateWeek(1);
+        });
+
+        // Initialize
+        showSection(1);
+    </script>
+</body>
+</html>
