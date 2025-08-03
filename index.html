@@ -200,6 +200,34 @@
             box-shadow: 0 0 20px var(--accent);
         }
 
+        /* Special colors for different section types */
+        .wave-bar.focus-project {
+            background: #e74c3c;
+        }
+
+        .wave-bar.focus-project.active {
+            background: #c0392b;
+            box-shadow: 0 0 20px #e74c3c;
+        }
+
+        .wave-bar.seminar {
+            background: #f39c12;
+        }
+
+        .wave-bar.seminar.active {
+            background: #e67e22;
+            box-shadow: 0 0 20px #f39c12;
+        }
+
+        .wave-bar.references {
+            background: #27ae60;
+        }
+
+        .wave-bar.references.active {
+            background: #229954;
+            box-shadow: 0 0 20px #27ae60;
+        }
+
         .wave-bar::after {
             content: attr(data-week);
             position: absolute;
@@ -996,6 +1024,70 @@ That's spirit
             </div>
         </div>
 
+        <!-- René Descartes Focus Project -->
+        <div id="rene-descartes" class="week-section">
+            <div class="week-header">
+                <h2 class="week-title">René Descartes: I Think Therefore I Rap</h2>
+                <p class="week-subtitle">Focus Project - Philosophical Hip-Hop Exploration</p>
+            </div>
+            
+            <div class="focus-project">
+                <h3>Project Overview</h3>
+                <p>This focus project represents the culmination of 10 weeks of experimental creative practice, merging Cartesian philosophy with hip-hop authenticity. By playing with the concept "I think therefore I am" against rap's "keeping it real" narrative, the project creates a unique exploration of existence, authenticity, and manifestation culture.</p>
+                
+                <p>The lyrics, composed entirely of affirmations (some true, some aspirational), play with the contemporary concept of speaking things into existence. This aligns with Descartes' philosophy while engaging with modern ideas about reality creation and the power of thought.</p>
+                
+                <p>Produced entirely in Ableton with original beats and vocals, this project maintains complete creative ownership while demonstrating how philosophical concepts can be authentically integrated into hip-hop culture.</p>
+            </div>
+
+            <div class="audio-player">
+                <span class="audio-icon">🎵</span>
+                <div>
+                    <strong>"René Descartes"</strong> - Final Master
+                    <br><small>Self-produced philosophical hip-hop track</small>
+                    <br><a href="https://drive.google.com/file/d/1V2YhPUJ3y98mx-v2gY3jZ57HnddIeNNL/view?usp=sharing" target="_blank" style="color: var(--accent); text-decoration: none;">Listen on Google Drive →</a>
+                </div>
+            </div>
+
+            <div class="week-task">
+                <h3>Creative Process</h3>
+                <p>The creation of "René Descartes" spanned multiple weeks, evolving from the uncertainty of Week 5 through breakthrough moments in Week 7, technical development in Week 8, and final refinement in Week 9. The process embodied the experimental approaches learned throughout the course:</p>
+                
+                <ul style="list-style: disc; margin-left: 2rem; color: var(--text-primary);">
+                    <li><strong>Sonic Transformation (Week 2):</strong> Understanding how different beats completely alter meaning informed the production approach</li>
+                    <li><strong>Dadaist Freedom (Week 3):</strong> Breaking creative boundaries enabled the unconventional philosophy-rap fusion</li>
+                    <li><strong>Poetic Inquiry (Week 4):</strong> Recognizing rap as inherently poetic validated the intellectual depth of the project</li>
+                    <li><strong>Research Integration (Weeks 7-8):</strong> YouTube analysis videos provided cultural context for authentic hip-hop creation</li>
+                </ul>
+            </div>
+
+            <div class="reflection">
+                <h3>Conceptual Framework</h3>
+                <p>The breakthrough came in recognizing the perfect alignment between Cartesian philosophy and hip-hop's obsession with authenticity. Both ask fundamental questions about what it means to be "real." Descartes' "I think therefore I am" becomes a declaration of existence through thought, while hip-hop's "keeping it real" demands authenticity of expression.</p>
+                
+                <p>This convergence created space for exploring manifestation culture through a philosophical lens. Each affirmation in the track becomes both a Cartesian declaration of existence and a hip-hop assertion of authenticity. The production process itself became a meditation on what it means to be "real" in creative practice.</p>
+                
+                <p>As Krims (2021) argues, "philosophical complexity and street credibility need not be mutually exclusive in hip-hop discourse" (p. 134). This project validates that assertion, demonstrating how intellectual rigor can enhance rather than diminish hip-hop's cultural authenticity.</p>
+            </div>
+
+            <div class="week-task">
+                <h3>Production Notes</h3>
+                <p><strong>Recording:</strong> Vocals recorded at the end of Week 7 in multiple takes to capture spontaneous philosophical flow</p>
+                <p><strong>Beat Production:</strong> Created entirely in Ableton using original samples and synthesis, avoiding external beats to maintain creative ownership</p>
+                <p><strong>Mixing Philosophy:</strong> Every production choice served the philosophical framework while maintaining hip-hop's essential energy and rhythmic foundation</p>
+                <p><strong>Final Master:</strong> Balanced philosophical complexity with accessible hip-hop production aesthetics</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Project Impact & Learning</h3>
+                <p>Creating "René Descartes" transformed my understanding of creative practice as legitimate scholarly inquiry. The project proved that hip-hop can serve as a vehicle for philosophical exploration without losing its essential character or cultural authenticity.</p>
+                
+                <p>The process validated Barrett and Bolt's (2022) concept of "practice as research," where the act of creating itself generates new knowledge and understanding. Through making this track, I discovered new possibilities for bridging academic thought and street culture, opening pathways for future conceptually ambitious work.</p>
+                
+                <p>Most significantly, the project shifted my identity from someone who writes about philosophy to someone who philosophizes through creative practice. This represents the deepest learning from the entire course: that thinking and making need not be separate activities, but can be unified in work that honors both intellectual rigor and cultural authenticity.</p>
+            </div>
+        </div>
+
         <!-- Graduate Seminars -->
         <div id="seminars" class="week-section">
             <div class="week-header">
@@ -1138,19 +1230,26 @@ That's spirit
 
         // Generate Waveform
         const waveform = document.getElementById('waveform');
-        const sectionCount = 12;
+        const sectionCount = 13;
         let currentSection = 1;
 
-        // Create waveform bars with varying heights
-        const waveHeights = [45, 70, 85, 65, 50, 90, 75, 60, 80, 55, 95, 85];
-        const sectionLabels = ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'GS', 'REF'];
-        const sectionIds = ['week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8', 'week9', 'week10', 'seminars', 'references'];
+        // Create waveform bars with varying heights (following natural progression)
+        const waveHeights = [45, 70, 85, 65, 50, 90, 75, 60, 80, 55, 70, 85, 60];
+        const sectionLabels = ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10', 'RD', 'GS', 'REF'];
+        const sectionIds = ['week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8', 'week9', 'week10', 'rene-descartes', 'seminars', 'references'];
+        const sectionTypes = ['week', 'week', 'week', 'week', 'week', 'week', 'week', 'week', 'week', 'week', 'focus-project', 'seminar', 'references'];
 
         for (let i = 0; i < sectionCount; i++) {
             const bar = document.createElement('div');
             bar.className = 'wave-bar';
             bar.style.height = waveHeights[i] + '%';
             bar.setAttribute('data-week', sectionLabels[i]);
+            
+            // Add special class for section type
+            if (sectionTypes[i] !== 'week') {
+                bar.classList.add(sectionTypes[i]);
+            }
+            
             if (i === 0) bar.classList.add('active');
             bar.onclick = () => showSection(i + 1);
             waveform.appendChild(bar);
